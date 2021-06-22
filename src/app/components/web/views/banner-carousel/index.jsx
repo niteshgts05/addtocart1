@@ -1,4 +1,4 @@
-import React, { Component, useEffect } from 'react'
+import React from 'react'
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -15,27 +15,11 @@ const Bannerslider = ({categoryData}) =>{
             slidesToShow: 1,
             slidesToScroll: 1
         };
-    
-        const categoryImg = {
-            src:[
-                "img/category/grocerystample.jpg",
-                "img/category/personalcare.png",
-                "img/category/household.png",
-                "img/category/kitchen.png",
-                "img/category/beverage.png",
-                "img/category/grocerystample.jpg",
-                "img/category/personalcare.png",
-                "img/category/household.png",
-                "img/category/kitchen.png",
-                "img/category/beverage.png"
-            ]
-        }
-        
 
         return (
             <div>
-                <Category categoryImg = {categoryImg} categoryData={categoryData} />
-                {/* <Slider {...settings}>
+                <Category categoryData={categoryData} />
+                <Slider {...settings}>
                     <div className="owl-item">
                         <img src="img/banners/offer-1.jpg" alt="supermarket" />
                     </div >
@@ -45,7 +29,7 @@ const Bannerslider = ({categoryData}) =>{
                     <div className="owl-item">
                         <img src="img/banners/offer-3.jpg" alt="supermarket" />
                     </div>
-                </Slider> */}
+                </Slider>
             </div>
         )
 }
