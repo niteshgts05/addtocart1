@@ -1,14 +1,21 @@
 import React from "react";
 import Slider from "react-slick";
 import { Link } from "react-router-dom";
-const Category = ({ categoryData }) => {
+import {data} from "./data";
+const Category = ({categoryData}) => {
+    // const categoryData = data;
   var settings = {
+    // autoplay:true,
+    // autoplaySpeed:100,
+    nextArrow:<p></p>,
+    prevArrow:<p></p>,
+    arrows:true,
     dots: false,
     infinite: false,
     speed: 500,
     slidesToShow: 7,
     slidesToScroll: 2,
-    initialSlide: 0,
+    initialSlide: 0.5,
     responsive: [
       {
         breakpoint: 1024,
@@ -37,7 +44,7 @@ const Category = ({ categoryData }) => {
     ],
   };
   return (
-    <div style={{ background: "#fff" }}>
+    <div style={{ background: "#eee" }}>
       <div className="container" id="header-category-bk">
         <Slider {...settings}>
           {categoryData.length > 0 &&
@@ -53,7 +60,7 @@ const Category = ({ categoryData }) => {
                     <img
                       className="img-fluid"
                       src={value.category_image}
-                      alt="grocery-stamples"
+                      alt={value.category_name}
                     />
                     <h6>{value.category_name}</h6>
                   </Link>

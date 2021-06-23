@@ -495,30 +495,35 @@ a:focus {
 /* Category Slider */
 .category-item img {
 	background: #fff none repeat scroll 0 0;
-	border-radius: 50px;
-	box-shadow: 0 0 2px #ccc;
-	height: 80px;
-	margin: 1px 30px 8px;
+	/* border-radius: 50px; */
+	border-radius: 10px;
+	/* box-shadow: 1px 1px 1px 1px red; */
+	height: 145px;
+	/* margin: 1px 30px 8px; */
 	object-fit: scale-down;
-	padding: 5px;
+	padding: 2px;
 	transform: scale(1);
 	transition-duration: 0.4s;
-	width: 80px;
+	width: 145px;
 }
 .category-item:hover img
 {
 	 transform: scale(1.09);
+     box-shadow: 1px 1px 1px 1px #ccc;
 }
 .category-item {
     padding: 8px;
     text-align: center;
 }
 .category-item h6 {
-    font-size: 13px;
+    padding: 15px 0px 5px 0px;
+    font-size: 15px;
+    font-weight: 500;
     margin: 0;
     overflow: hidden;
     text-overflow: ellipsis;
-    white-space: nowrap;
+    /* white-space: nowrap; */
+    text-align: center;
 }
 .top-category {
     background: #fff none repeat scroll 0 0;
