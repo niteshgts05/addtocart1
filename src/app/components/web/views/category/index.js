@@ -2,6 +2,7 @@ import React from "react";
 import Slider from "react-slick";
 import { Link } from "react-router-dom";
 import {data} from "./data";
+
 const Category = ({categoryData}) => {
     // const categoryData = data;
   var settings = {
@@ -54,7 +55,7 @@ const Category = ({categoryData}) => {
                   <Link
                     to={{
                       pathname: `/shop/grocery-staples`,
-                    //   state:{id: value.category_id}
+                      state:{category_name: value.category_name, category_image:value.category_image}
                     }}
                   >
                     <img

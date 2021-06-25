@@ -14,6 +14,7 @@ class Shopdetails extends Component {
             list: [], limit:12, isloaded: false
         }
     }
+
     async componentDidMount() {
         window.scrollTo(0, 0);
         let url = window.location.href.split('/');
@@ -21,7 +22,8 @@ class Shopdetails extends Component {
         try {
             let p = await GetProductDetails.getAllProductList(lastSegment);
             if (p) {
-                this.setState({ list: p.data.products, isloaded: true })
+                // alert(lastSegment)
+                this.setState({ list: p, isloaded: true })
             }
         } catch (e) {
             NotificationManager.error("Empty data in category", "Data");
@@ -36,14 +38,17 @@ class Shopdetails extends Component {
         }
     }
     render() {
+        // console.log(window.history.state.state.id)
         let { list, isloaded, limit } = this.state;
         return (
             <div>
-                <section className="pt-3 pb-3 page-info section-padding border-bottom bg-white single-product-header-bk">
+                <section style={{ height:"30px"}} className=" page-info section-padding border-bottom bg-white single-product-header-bk">
                     <div className="container">
                         <div className="row">
                             <div className="col-md-12">
-                                <a href="#"><strong><span className="mdi mdi-home" /> Home</strong></a> <span className="mdi mdi-chevron-right" /> <a href="#">Fruits &amp; Vegetables</a> <span className="mdi mdi-chevron-right" /> <a href="#">Fruits</a>
+                                <a href="/"><strong><span className="mdi mdi-home" /> Home</strong></a> 
+                                <span className="mdi mdi-chevron-right" /> <a href="/">{window.history.state.state.category_name}</a> 
+                                {/* <span className="mdi mdi-chevron-right" /> <a href="#">Fruits</a> */}
                             </div>
                         </div>
                     </div>
@@ -56,7 +61,7 @@ class Shopdetails extends Component {
                             <div className="col-lg-12">
                                 <div className="product-top-dt">
                                     <div className="product-left-title">
-                                        <h2>All Products</h2>
+                                        <h2>All Products 125</h2>
                                     </div>
                                     <Filterbycategory onSelectFilterCategory={this.handleChangeByCategory.bind(this)} />
                                     <div className="product-sort">
@@ -85,8 +90,8 @@ class Shopdetails extends Component {
                                 <div className="col-md-12">
                                     <div className="row no-gutters">
                                         {
-                                            list.slice(0, limit).map((row, index) => (
-                                                <div key={index} className="col-md-4">
+                                            list.map((row, index) => (
+                                                <div key={index} className="col-md-3 p-2">
                                                     <div className="item">
                                                         <div className="product">
                                                             <Link to={{
@@ -95,7 +100,7 @@ class Shopdetails extends Component {
                                                             }}>
                                                                 <div className="product-header">
                                                                     <span className="badge badge-success">{row.discountPer}% OFF</span>
-                                                                    <img className="img-fluid" src={row.photo} alt="product" />
+                                                                    <img className="img-fluid" src={row.primary_image} alt="product" />
                                                                     <span className="veg text-success mdi mdi-circle" />
                                                                 </div>
                                                                 <div className="product-body">
@@ -105,7 +110,7 @@ class Shopdetails extends Component {
                                                             </Link>
                                                             <div className="product-footer">
                                                                 <button type="button" className="btn btn-secondary btn-sm float-right" onClick={() => this.props.addToCart(row)}><i className="mdi mdi-cart-outline" /> Add To Cart</button>
-                                                                <p className="offer-price mb-0">&#x20B9;{row.netPrice}  <i className="mdi mdi-tag-outline" /><br /><span className="regular-price">&#x20B9;{row.price} </span></p>
+                                                                <p className="offer-price mb-0">&#x20B9;{row.product_name}  <i className="mdi mdi-tag-outline" /><br /><span className="regular-price">&#x20B9;{row.price} </span></p>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -113,6 +118,7 @@ class Shopdetails extends Component {
                                             ))}
                                     </div>
 
+            
                                     <div class="more-product-btn">
                                         <button class="show-more-btn hover-btn" onClick={this.onLoadMore}>Show More</button>
                                     </div>

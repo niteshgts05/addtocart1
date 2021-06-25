@@ -22,7 +22,7 @@ const Home = () => {
     <div className="wrapper">
       <Bannerslider categoryData={categoryData} />
       {/* <Topsavers /> */}
-      <Bestofferbanner />
+      {/* <Bestofferbanner /> */}
       <Topstample />
     </div>
   );

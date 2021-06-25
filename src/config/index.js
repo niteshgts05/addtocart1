@@ -13,7 +13,8 @@ const Apis = {
   //product api
   GetProductById: `${API_URL}/api/product/getWebProductById?id=`,
   GetAllGroceryStaple: `${API_URL}/api/product/getAllGroceryStaple`,
-  GetAllProductList: `${API_URL}/api/product/list/`,
+  // GetAllProductList: `${API_URL}/api/product/list/`,
+  
 
   //product api
   GetOrderCreateByUser: `${API_URL}/api/order/create`,
@@ -22,8 +23,6 @@ const Apis = {
 
   //Filter by category
   // GetAllCategoryList: `${API_URL}/api/category/cn/list?slug=`,
-  GetAllCategoryList: `${API_URL}/v1/getCategory`,
-
   GetFilterByCategory: `${API_URL}/api/category/c`,
 
   //profile 
@@ -42,6 +41,14 @@ const Apis = {
   GetPaymentValue: `${API_URL}/api/payment/orders`, 
   GetPaymentVerification: `${API_URL}/api/payment/verification`, 
   GetPaymentOrderList: `${API_URL}/api/payment/orderlist`, 
+
+
+  //Nitesh @ Apis
+   //Filter by category
+  // @Nitesh
+  // GetAllCategoryList: `${API_URL}/api/category/cn/list?slug=`,
+  GetAllCategoryList: `${API_URL}/v1/getCategory`, 
+  GetAllProductList: `${API_URL}/v1/getproductbycategoryid/11`,
 
 
 

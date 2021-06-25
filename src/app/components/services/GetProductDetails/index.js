@@ -18,7 +18,7 @@ const getProductById = async (id) => {
 
 const getAllProductList = async (slug) => {
     try {
-        let result = await api.get(Apis.GetAllProductList+slug);
+        let result = await api.get(Apis.GetAllProductList);
         if (result.data.error) {
             NotificationManager.error(result.data.error);
             return null;

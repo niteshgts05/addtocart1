@@ -1,7 +1,8 @@
-import React, { Component } from 'react'
+import React, { useEffect, useState} from 'react'
 import Slider from "react-slick";
-export default class Topstample extends Component {
-    render() {
+import { dummy } from './dummy';
+const Topstample =()=> {
+  
         var settings = {
             dots: false,
             infinite: false,
@@ -44,6 +45,22 @@ export default class Topstample extends Component {
               }
             ]
           };
+          const product = dummy;
+
+          const [productData, setProductData] = useState({});
+          useEffect(() => {
+            async function homadata() {
+                setProductData(product)
+            //   const res = await GetCategoryDetails.getAllCategoryList();
+            //   if (res) {
+            //     await setCategoryData(res.data);
+            //   } else {
+            //     console.log("error");
+            //   }
+            }
+            homadata();
+          }, []);
+console.log(productData)
         return (
             <div>
                  {/* New Item slider */}
@@ -176,5 +193,5 @@ export default class Topstample extends Component {
                 {/* End New item slider */}
             </div>
         )
-    }
 }
+export default Topstample;
