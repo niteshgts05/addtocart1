@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Slider from "react-slick";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
-import GroceryStampleDetails from "../../../../services/GroceryStampleDetails";
+// import GroceryStampleDetails from "../../../../services/GroceryStampleDetails";
 import { addToCart } from "../../../../../store/actions/cartActions";
 import CircularProgress from "@material-ui/core/CircularProgress";
 import { data } from "./dummyData";

@@ -3,7 +3,7 @@ import Bannerslider from "../banner-carousel";
 import Topsavers from "./top-section";
 import Bestofferbanner from "./best-offers-banner";
 import Topstample from "./top-stample";
-import { GetCategoryDetails } from "../../../services";
+// import { GetCategoryDetails } from "../../../services";
 
 const Home = () => {
   return (
