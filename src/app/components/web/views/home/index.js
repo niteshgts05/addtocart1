@@ -6,24 +6,9 @@ import Topstample from "./top-stample";
 import { GetCategoryDetails } from "../../../services";
 
 const Home = () => {
-  const [categoryData, setCategoryData] = useState({});
-  useEffect(() => {
-    async function homadata() {
-      const res = await GetCategoryDetails.getAllCategoryList();
-      if (res) {
-        await setCategoryData(res.data);
-      } else {
-        console.log("error");
-      }
-    }
-    homadata();
-  }, []);
   return (
     <div className="wrapper">
-      <Bannerslider categoryData={categoryData} />
-      {/* <Topsavers /> */}
-      {/* <Bestofferbanner /> */}
-      <Topstample />
+      <Topsavers />
     </div>
   );
 };

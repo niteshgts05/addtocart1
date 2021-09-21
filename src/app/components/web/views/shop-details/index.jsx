@@ -37,6 +37,7 @@ class Shopdetails extends Component {
             this.setState({ isloaded: true, list: value.data })
         }
     }
+    
     render() {
         // console.log(window.history.state.state.id)
         let { list, isloaded, limit } = this.state;
@@ -53,6 +54,8 @@ class Shopdetails extends Component {
                         </div>
                     </div>
                 </section>
+
+
 
                 {/* All product */}
                 <div className="all-product-grid">
