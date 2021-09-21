@@ -1,4 +1,4 @@
-import React, { Component, useEffect, useState } from "react";
+import React from "react";
 import Bannerslider from "../banner-carousel";
 import Topsavers from "./top-section";
 
