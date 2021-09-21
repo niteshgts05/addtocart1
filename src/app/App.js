@@ -17,7 +17,7 @@ export default class App extends Component {
 					<BrowserRouter>
 						<Switch>
 							<Route path='/' component={rootRoutes} />
-							<Route component={NotFound} />
+							{/* <Route component={NotFound} /> */}
 						</Switch>
 					</BrowserRouter>
 				</div>
